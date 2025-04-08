@@ -1,6 +1,7 @@
 ﻿using CasosDeUso.PluginsInterfaces;
 using CoreBusiness.Entidades;
 using SQLite;
+using System.Diagnostics;
 
 namespace MinhaAgenda.Plugins.SqlLite
 {
@@ -22,6 +23,8 @@ namespace MinhaAgenda.Plugins.SqlLite
         public async Task AdicionarContatoAsync(Observacao observacao)
         {
             await _database.InsertAsync(observacao);
+            Debug.WriteLine($"Banco salvo em: {Constantes._databasepath}");
+
         }
 
 
